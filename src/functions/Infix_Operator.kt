@@ -1,6 +1,6 @@
 package functions
 
-infix fun Int.plus(other: Int): Int {
+infix fun Int.addTo(other: Int): Int {
     return this + other
 }
 
@@ -26,7 +26,7 @@ fun longMethod(name: String = "Untitled", address:String, age: Int = 35, descrip
 
 fun main() {
     //improved readability
-    val result = 5 plus 3 minus 1
+    val result = 5 addTo 3 minus 1
     println("Infix result : $result")
 
     val v1 = Vector2D(3.0, 4.0)

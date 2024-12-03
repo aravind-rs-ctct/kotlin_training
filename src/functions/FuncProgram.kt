@@ -2,7 +2,8 @@ package functions
 
 import advantages.User
 
-var splFunction = println("This is a splFunction")
+fun simplePrintfunction (x: String) = println("Special text is $x")
+val splFunction: (String)->Unit = ::simplePrintfunction
 
 // Top level function
 fun parseJson(jsonString: String): User {
@@ -22,7 +23,7 @@ fun factorial(n: Int) {
 fun main() {
     val student = User( 35, "Aravind", "Babu", 34, "TBD")
     student.printDescription()
-    splFunction
+    splFunction(student.name)
     factorial(5)
 
     //custom class's extension fucntion
@@ -45,6 +46,8 @@ fun main() {
 //internal: Visible within the same module.  
 //protected: Visible within the same class hierarchy.  
 //public: Visible everywhere
+
+//String escaped = StringUtilsKt.escapeForXML(); in java
 private fun String.escapeForXml() : String {
     return this
         .replace("&", "&amp;")

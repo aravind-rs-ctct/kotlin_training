@@ -1,6 +1,6 @@
 package datatypes
 
-const val dummy = "DUMMY"//User("12", "12","21",22, "dea")
+const val DUMMY = "DUMMY"//User("12", "12","21",22, "dea")
 
 fun main() {
 
@@ -9,6 +9,9 @@ fun main() {
     val weight: Double = 65.5 // Double-precision floating-point number
     val pi: Float = 3.14159f // Single-precision floating-point number
 
+    var numericValue: Number = 395 //any number type
+    numericValue = 65.8
+    numericValue = 1000L
     // Character data type
     val initial: Char = 'A'
 
@@ -20,10 +23,9 @@ fun main() {
 
     // Array data type
     val numbers: IntArray = intArrayOf(1, 2, 3, 4, 5)
+    var numberArr = 1..5
 
-    lateinit var value1: String
-
-    var anyValue: Any = 123
+    var anyValue: Any? = 123
     anyValue = "Hello world"
 
     var checkType = "1234" //Type inference
@@ -56,9 +58,11 @@ fun fail(message: String): Nothing {
 }
 
 fun checkValue(num: Int) : String {
-    return when (num) {
-        1 -> "one"
-        2 -> "two"
-        else -> fail("Unexpected value") // fail returns Nothing, ensuring exhaustiveness
+    return if(num == 1 ) {
+        "one"
+    }else if( num == 2) {
+        "two"
+    }else {
+         fail("Unexpected value") // fail returns Nothing, ensuring exhaustiveness
     }
 }
