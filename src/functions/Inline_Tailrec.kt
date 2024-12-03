@@ -4,8 +4,6 @@ class Student(val age: Int, val name: String) {
     fun printDetails () = println("Student name is $name and age is $age")
 }
 
-
-
 //inline functions
 inline fun measureTimeMillis(block: () -> Unit): Long {
     val start = System.currentTimeMillis()
@@ -38,17 +36,9 @@ tailrec fun fibonacciTailRec(n: Int, a: Int = 0, b: Int = 1) {
     fibonacciTailRec(n - 1, b, a + b)
 }
 
-fun fibonacci(n: Int, a: Int = 0, b: Int = 1) {
-    if (n == 0) {
-        return
-    }
-    print("$a")
-    fibonacci(n - 1, b, a + b)
-}
-
 fun main(){
     val student = Student(35, "Aravind")
     student.printDetails()
 
-//    fibonacciTailRec(500000)
+    fibonacciTailRec(500000)
 }

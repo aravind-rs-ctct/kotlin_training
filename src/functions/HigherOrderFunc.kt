@@ -1,4 +1,4 @@
-package advantages
+package functions
 
 
 //Functions as variables
