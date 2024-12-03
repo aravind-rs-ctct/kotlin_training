@@ -1,8 +1,5 @@
 package datatypes
 
-import advantages.User
-import advantages.UserData
-
 const val dummy = "DUMMY"//User("12", "12","21",22, "dea")
 
 fun main() {
@@ -49,7 +46,6 @@ fun main() {
         
         This is a start of a new paragraph
     """
-
 
     println("check multiline string: $multilineString")
 

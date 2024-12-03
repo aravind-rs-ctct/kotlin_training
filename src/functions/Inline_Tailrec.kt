@@ -1,9 +1,5 @@
 package functions
 
-class Student(val age: Int, val name: String) {
-    fun printDetails () = println("Student name is $name and age is $age")
-}
-
 //inline functions
 inline fun measureTimeMillis(block: () -> Unit): Long {
     val start = System.currentTimeMillis()
@@ -21,6 +17,18 @@ fun performTask(){
     println("Time taken: $timeTaken milliseconds")
 }
 
+//Compiled code version
+//fun performTask(){
+//    val timeTaken = {
+//        val start = System.currentTimeMillis()
+//        repeat(1000000) {
+//            // Do something
+//        }
+//        System.currentTimeMillis() - start
+//    }
+//    println("Time taken: $timeTaken milliseconds")
+//}
+
 inline fun <T> withLogging(message: String, noinline block: () -> T): T {
     println("Starting: $message")
     val result = block()
@@ -37,8 +45,5 @@ tailrec fun fibonacciTailRec(n: Int, a: Int = 0, b: Int = 1) {
 }
 
 fun main(){
-    val student = Student(35, "Aravind")
-    student.printDetails()
-
     fibonacciTailRec(500000)
 }

@@ -6,7 +6,7 @@ fun main(){
 
     val nullableString: String? = "Hello"
 
-    //it is an implicit parameter in kotlin, refers to the single parameter in lambdas
+    //"it" is an implicit parameter in kotlin, refers to the single parameter in lambdas
 
     //let : Mostly used for performing some actions on it after nullsafety
     nullableString?.let { value: String ->
@@ -40,8 +40,9 @@ fun main(){
     println("also output is $m")
 
     //apply
-    person.apply {
+    var newPerson = person.apply {
+        name = "Thomas"
         description = "Top secret agent"
     }
-    println("person details ${person.description}")
+    println("person details ${person.name} is a ${person.description}, isEqual : ${person === newPerson}")
 }

@@ -5,7 +5,6 @@ package functions
 val add: (Int, Int)-> Int = {a, b -> a+b}
 val subtract: (Int, Int)-> Int = {a, b -> a-b}
 
-
 fun operate(operation: (Int, Int)-> Int) {
     println(operation(5,3))
 }

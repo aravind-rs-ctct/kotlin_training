@@ -2,6 +2,7 @@ package functions
 
 import advantages.User
 
+var splFunction = println("This is a splFunction")
 
 // Top level function
 fun parseJson(jsonString: String): User {
@@ -15,19 +16,18 @@ fun factorial(n: Int) {
     fun factorialRecursive(n: Int): Int {
         return if (n == 0) 1 else n * factorialRecursive(n - 1)
     }
-
-    println(factorialRecursive(n))
+    println("Factorial of $n is ${factorialRecursive(n)}")
 }
 
-//Extension property
-val User.incomplete: Boolean
-    get() = surName.isEmpty()
+fun main() {
+    val student = User( 35, "Aravind", "Babu", 34, "TBD")
+    student.printDescription()
+    splFunction
+    factorial(5)
 
-fun User.clearData(){
-    name = ""
-    age = 0
-    surName = ""
-    description = ""
+    //custom class's extension fucntion
+    student.clearData()
+    println("is data incomplete : ${student.incomplete}")
 }
 
 //No access to private members :
@@ -51,16 +51,21 @@ private fun String.escapeForXml() : String {
         .replace("<", "&lt;")
         .replace(">", "&gt;")
 }
+//Extension property
+val User.incomplete: Boolean
+    get() = surName.isEmpty()
 
-
-
-fun main() {
-    val student = User( 35, "Aravind", "Babu", 34, "TBD")
-    student.printDescription()
-
-    student.clearData()
-
-    println("is data incomplete : ${student.incomplete}")
+fun User.clearData(){
+    name = ""
+    age = 0
+    surName = ""
+    description = ""
 }
+
+
+
+
+
+
 
 

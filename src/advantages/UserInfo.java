@@ -1,5 +1,7 @@
 package advantages;
 
+import java.util.Locale;
+
 public class UserInfo {
     private int id;
     private String name;
@@ -60,4 +62,18 @@ public class UserInfo {
             System.out.println("description is " + description);
         }
     }
-}
+
+    public static void main(String args[]){
+        User user = new User(7, "James", "Bond", 37, "Secret Agent");
+        user.printDescription();
+        Utils.printUpperCase(user.getName());
+    }
+ }
+
+ class Utils{
+    static void printUpperCase(String text){
+        if(text != null){
+            System.out.println("text in upperCase:  "+text.toUpperCase(Locale.getDefault()));
+        }
+    }
+ }
