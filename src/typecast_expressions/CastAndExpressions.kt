@@ -10,7 +10,6 @@ fun guessTheType(value: Any){
         value.printInUpperCase()
     }
 }
-
 fun main(){
 
     val grade = 90

@@ -1,3 +1,4 @@
+@file:JvmName("ExtensionUtils")
 package advantages
 
 
@@ -12,5 +13,8 @@ fun main() {
  user.printDescription()
  user.description?.printInUpperCase()
  user.name.printInUpperCase()
+
+    val userInfo: UserInfo = UserInfo(1, "Aravind", "Babu", 35, "Android Developer")
+
 }
 

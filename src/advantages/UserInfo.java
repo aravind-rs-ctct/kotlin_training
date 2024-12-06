@@ -1,5 +1,7 @@
 package advantages;
 
+import kotlin.text.StringsKt;
+
 import java.util.Locale;
 
 public class UserInfo {
@@ -67,6 +69,7 @@ public class UserInfo {
         User user = new User(7, "James", "Bond", 37, "Secret Agent");
         user.printDescription();
         Utils.printUpperCase(user.getName());
+        ExtensionUtils.printInUpperCase(user.getDescription());
     }
  }
 

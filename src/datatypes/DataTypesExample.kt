@@ -23,10 +23,10 @@ fun main() {
 
     // Array data type
     val numbers: IntArray = intArrayOf(1, 2, 3, 4, 5)
-    var numberArr = 1..5
 
     var anyValue: Any? = 123
     anyValue = "Hello world"
+    anyValue = null
 
     var checkType = "1234" //Type inference
 
@@ -42,6 +42,7 @@ fun main() {
 //    println("value of string field $value1")
     println("checkNumber: ${checkValue(2)}")
 //    println("checkNumber: ${checkValue(42)}")
+
 
     val multilineString = """
         This is a new string that has a new line.

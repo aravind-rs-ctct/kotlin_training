@@ -3,10 +3,11 @@ package functions
 import advantages.User
 
 fun simplePrintfunction (x: String) = println("Special text is $x")
+
 val splFunction: (String)->Unit = ::simplePrintfunction
 
 // Top level function
-fun parseJson(jsonString: String): User {
+ fun parseJson(jsonString: String): User {
     // JSON parsing logic using a library like Gson or Moshi
     return Gson().fromJson(jsonString, User::class.java)
 }
@@ -29,6 +30,12 @@ fun main() {
     //custom class's extension fucntion
     student.clearData()
     println("is data incomplete : ${student.incomplete}")
+    val (age, name) = returnMultipleData()
+}
+
+
+fun returnMultipleData(): Pair<Int, String> {
+    return Pair(35,"Aravind")
 }
 
 //No access to private members :
@@ -48,12 +55,14 @@ fun main() {
 //public: Visible everywhere
 
 //String escaped = StringUtilsKt.escapeForXML(); in java
-private fun String.escapeForXml() : String {
+fun String.escapeForXml() : String {
     return this
         .replace("&", "&amp;")
         .replace("<", "&lt;")
         .replace(">", "&gt;")
 }
+
+
 //Extension property
 val User.incomplete: Boolean
     get() = surName.isEmpty()

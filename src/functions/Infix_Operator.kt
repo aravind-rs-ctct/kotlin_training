@@ -10,7 +10,7 @@ infix fun Int.minus(other: Int): Int {
 
 
 //Operator Overloading :  data class?
-class Vector2D(val x: Double, val y: Double){
+data class Vector2D(val x: Double, val y: Double){
     operator fun plus(other: Vector2D): Vector2D {
         return Vector2D(x + other.x, y + other.y)
     }
