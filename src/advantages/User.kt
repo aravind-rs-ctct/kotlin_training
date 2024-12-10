@@ -1,6 +1,8 @@
 @file:JvmName("ExtensionUtils")
 package advantages
 
+import class_interface.Transitionable
+
 
 class User (val id: Int, var name: String, var surName: String, var age: Int, var description: String?) {
     fun printDescription() = description?.let { println("description is $description") }
